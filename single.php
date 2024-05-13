@@ -22,11 +22,18 @@
                     <p>
                         <?php the_post_thumbnail('large',array('class'=>'img-fluid')); ?>
                     </p>
-                    <p> <?php if (is_single()) {
-                        the_content();
-                    } else the_excerpt();
+                    <p> <?php the_content();?></p>
                     
-                    ?></p>
+                 <h4>
+                 <p><?php next_post_link(); ?></p>
+                    <p><?php previous_post_link() ?></p>
+                 </h4>
+
+                    
+                    <?php if(comments_open()){
+                        comments_template();
+ 
+                    } ?> 
 
                     
                 </div>
