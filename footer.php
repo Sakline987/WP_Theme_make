@@ -2,7 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; WEB IT LTD - All Rights Reserved
+               <?php
+               if(is_active_sidebar('footer-widget')){
+                dynamic_sidebar('footer-widget');
+               }
+               ?>
             </div>
         </div>
     </div>

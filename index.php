@@ -5,7 +5,7 @@
 <div class="posts">
 <?php while(have_posts()){
     the_post(); ?>
- 
+
  <div class="post">
         <div class="container">
             <div class="row">
@@ -29,7 +29,15 @@
                     <p>
                         <?php the_post_thumbnail('our_image'); ?>
                     </p>
-                    <p> <?php the_excerpt();?></p>
+                
+                    <?php 
+                        if(post_password_required()){
+                            echo get_the_password_form();
+                        }else{
+                            the_excerpt();
+                        };
+                    ?>
+
 
                     
                 </div>

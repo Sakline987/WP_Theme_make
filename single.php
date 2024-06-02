@@ -1,24 +1,27 @@
 <?php get_header(); ?>
 <?php get_template_part('hero','slider'); ?>
 
-
-<div class="posts">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+        
+<div class="posts ">
 <?php while(have_posts()){
     the_post(); ?>
  
- <div class="post">
+ <div class="post ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 ">
                   <h2 class="post-title"><?php the_title() ; ?></h2>
                   <p>
-                        <strong> <?php the_author(); ?> </strong><br/>
+                      
                         <?php echo get_the_date('dS M Y'); ?>
                     </p>
                 </div>
             </div>
        
-                <div class="col-md-10 offset-md-1">
+                <div class="col-md-12 ">
                     <p>
                         <?php the_post_thumbnail('large',array('class'=>'img-fluid')); ?>
                     </p>
@@ -30,10 +33,10 @@
                  </h4>
 
                     
-                    <?php if(comments_open()){
+                    <?php /* if(comments_open()){
                         comments_template();
  
-                    } ?> 
+                    } */ ?> 
 
                     
                 </div>
@@ -44,5 +47,16 @@
 <?php } ?>
  
 </div>
+        </div>
+            <div class="col-md-4 ">
+            <?php 
+            if (is_active_sidebar('mostak-right-sidebar')) {
+                dynamic_sidebar('mostak-right-sidebar');
+            }?>
+            
+            </div>
+        </div>
+</div>
+
 
 <?php get_footer(); ?>
