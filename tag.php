@@ -1,5 +1,15 @@
 <?php get_header(); ?>
 <?php get_template_part('hero','slider'); ?>
+<div class="archive-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-4 py-4 text-danger">
+            <h1>Post under <?php single_tag_title(); ?></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
     <div class="row">

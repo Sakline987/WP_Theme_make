@@ -19,11 +19,29 @@
                         <strong> <?php the_author(); ?> </strong><br/>
                         <?php echo get_the_date('dS M Y'); ?>
                     </p>
+                    <?php the_category(); ?>
 
                     <?php  echo get_the_tag_list('<ul class="list-unstyled">
                         <li>', '<li> </li>', '</li></ul>'); ?>
 
-                    
+                        <?php 
+                        $deshicons_here = get_post_format();
+                        if ($deshicons_here == 'image') {
+                           echo '<span class="dashicons dashicons-format-image"></span>';
+                        }elseif ($deshicons_here == 'video'){
+                            echo '<span class="dashicons dashicons-format-video"></span>';
+                        }elseif ($deshicons_here == 'audio'){
+                            echo '<span class="dashicons dashicons-format-audio"></span>';
+                        }elseif ($deshicons_here == 'links'){
+                            echo '<span class="dashicons dashicons-admin-links"></span>';
+                        }elseif ($deshicons_here == 'aside'){
+                            echo '<span class="dashicons dashicons-format-aside"></span>';
+                        }
+                        ?>
+
+                   
+
+                       
                 </div>
                 <div class="col-md-8">
                     <p>

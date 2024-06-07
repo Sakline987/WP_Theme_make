@@ -1,4 +1,15 @@
-<body>                
+<body <?php body_class(array('aam','jam','kola')); ?>>   
+    <div class="header-logo-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-logo p-2">
+                        <?php the_custom_logo(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>             
 <div class="header">
     <div class="container">
         <div class="row">
